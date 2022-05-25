@@ -9,6 +9,7 @@ Nestes repositório encontra-se estudo com MetaTrader 5 e Python, para criação
 * MetaTrader 5: https://www.metatrader5.com/pt/download
 * Biblioteca MetaTrader 5 para python: https://pypi.org/project/MetaTrader5/
 * Documentação da Biblioteca: https://www.mql5.com/pt/docs/integration/python_metatrader5
+* Documentação da Bibliote TA-Lib (indicadores de ativos): https://pypi.org/project/TA-Lib/
 
 Apesar de conseguir instalar o MetaTrader no *Linux*, a biblioteca só é válida para *Windows*.
 
@@ -30,3 +31,38 @@ pip install MetaTrader5
 Se tudo ocorreu como esperado,
 estamos apto a criar os códigos,
 e foi utilizado como editor o Visual Studio Code (https://code.visualstudio.com/download).
+
+
+## Arquivo para execução 
+
+### Codigo de Envio de Ordem através dos indicadores
+
+scr/main.py: A função run() definida no arquivo main.py é responsável pela execução do Bot. Ela depende das variáveis Ativo (str), lote (float); 
+
+``` python
+# Exemplo de uso (conta brasileira): 
+	- Execute o script:
+  	python src/main.py PETR3F 1
+```
+
+``` python
+# Exemplo de uso (conta Simulacao MetaTrader): 
+	- Execute o script:
+  	python src/main.py USDSEK 0.01
+```
+
+## Alterações do TimeFrame
+
+O timeframe pode ser alterado no arquivo `config_dev.yaml`.
+
+As opções para o timeframe são:
+
+*  'M1'     : mt5.TIMEFRAME_M1
+*  'M5'     : mt5.TIMEFRAME_M5
+*  'M15'    : mt5.TIMEFRAME_M15
+*  'M30'    : mt5.TIMEFRAME_M30
+*  'H1'     : mt5.TIMEFRAME_H1
+*  'H4'     : mt5.TIMEFRAME_H4
+*  'D1'     : mt5.TIMEFRAME_D1
+*  'W1'     : mt5.TIMEFRAME_W1
+*  'MN1'    : mt5.TIMEFRAME_MN1
